@@ -1,0 +1,339 @@
+$color1: #2bc7de;
+$color2: #005262;
+$color3: #b1937f;
+$color4: #dcd1ca;
+$color5: #9f9b96;
+
+// 1: Page Style
+// 2: Defaults
+// 3: Nav Bar
+// 4: Main
+// 5: Footer
+
+
+// Page Style and Zeroing values
+
+#page {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "header"
+    "main"
+    "foot";
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: black;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: color 0.5s, border 0.5s;
+  border-bottom: ghostwhite 2px solid;
+}
+
+a:hover {
+  color: $color2;
+  border-bottom: $color2 2px solid;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: ghostwhite;
+  text-align: center;
+  font-family: 'Overpass', Sans-Serif;
+  font-size: 17px;
+}
+
+// // Defaults
+
+h1 {
+  Font-Family: 'Permanent Marker', Cursive;
+  font-size: 2.5em;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  Font-Family: 'Permanent Marker', Cursive;
+  margin-top: auto;
+  opacity: 0.8;
+  font-size: 1.8em;
+}
+
+p {
+  Font-Family: 'Overpass', Sans-Serif;
+  font-size: 1.2em;
+}
+
+img {
+  width: 100%;
+}
+
+.button {
+  padding: 0.8em 2em;
+  margin: 0.5em;
+  border-radius: 1em;
+  font-family: 'Overpass', Sans-Serif;
+  font-weight: 500;
+  border-bottom: $color1 2px solid;
+  transition: background-color 0.3s, color 0.5s,
+    box-shadow 0.5s;
+}
+.highlight {
+  color: ghostwhite;
+  background-color: $color2;
+}
+.highlight:hover {
+  background-color: ghostwhite;
+  border-bottom: $color2 2px solid;
+}
+
+/* Navbar container */
+
+.header {
+  background-color: white;
+  display: grid;
+  grid-area: header;
+  grid-template-columns: auto 1fr auto;
+  padding: 0;
+}
+
+.logoimg {
+  padding: 0 0 0 20px;
+  width: auto;
+  height: 60px;
+}
+
+.navbarleft {
+  display: grid;
+  place-items: center;
+  margin-left: 1em;
+
+  h1 {
+    color: black;
+  }
+}
+
+.navbarcentre {
+  text-align: center;
+  display: grid;
+  place-items: center;
+
+  /* Links inside the navbar */
+
+  // a {
+  //   color: black;
+  //   font-size: 1.2em;
+  //   text-decoration: none;
+  //   transition: color 0.5s, border 0.5s;
+  //   border-bottom: ghostwhite 2px solid;
+  // }
+  
+  // a:hover {
+  //   color: $color2;
+  //   border-bottom: $color2 2px solid;
+  // }
+
+  a {
+    font-weight: 600;
+    color: black;
+    font-family: 'Overpass', Sans-Serif;
+  }
+
+  .headerlinks {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.navbarright {
+  display: flex;
+  place-items: center;
+  flex-direction: row;
+  text-align: right;
+}
+
+/* The dropdown container */
+.dropdown {
+  // float: left;
+  // overflow: hidden;
+
+  .dropbtn {
+    font-weight: 600;
+    color: black;
+    border-style: none;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-bottom: $color1 2px solid;
+    background-color: inherit;
+    font-family: inherit;
+    /* Important for vertical align on mobile phones */
+    transition: border-bottom 0.4s;
+    /* Important for vertical align on mobile phones */
+  }
+}
+
+.navbarcentre a:hover,
+.dropdown:hover .dropbtn,
+.button:hover {
+  // background-color: $color2;
+  border-bottom: $color2 2px solid;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(0, 82, 98, 0.0), rgba(0, 82, 98, 0.6));
+  min-width: auto;
+  box-shadow: $color2;
+  z-index: 1;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+  a {
+    float: none;
+    color: black;
+    padding: 1em 2em;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  a:hover {
+    background-color: ghostwhite;
+  }
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.herospace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-image: url(../images/pexels-jonas-von-werne-3354346.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.main {
+  grid-area: main;
+  min-height: calc(100vh - 80px);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.siteintro {
+  background-color: rgba(0, 82, 98, 0.8);
+  text-align: left;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding: 1em;
+  margin-right: 10%;
+  border-radius: 1em;
+  margin-left: auto;
+  margin-top: auto;
+  width: 70%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  h1,
+  p {
+    color: ghostwhite;
+  }
+}
+
+.tear {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  img {
+    filter: invert(100);
+  }
+}
+
+.tearinvert {
+  transform: rotateZ(180deg);
+
+  img {
+    filter: invert(100);
+    transform: scaleX(-1)
+  }
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  // border-top: red 1px solid;
+}
+
+.thanks {
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1.5em;
+  margin: 4em auto;
+  width: 60%;
+}
+
+// 5: Footer
+.footer {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  height: 100vh;
+  background-image: url(../images/pexels-daniel-torobekov-5901263.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .footercontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+
+  }
+}
+
+.card {
+  background-color: rgba(248, 248, 255, 0.801);
+  border-radius: 1em;
+  text-align: left;
+  padding: 1em;
+  width: 15%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-bottom: auto;
+
+  .tear {
+    margin-bottom: auto;
+  }
+
+  i {
+    color: black;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.tearend {
+  filter: invert(100);
+}
+
+// @media (max-width: 768px) {}
+
+// @media (max-width: 935px) {}
+
+// @media (max-width: 1200px) {}
+// For larger sizes move footer background origin?
+// @media (min-width: 1201px) {}
